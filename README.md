@@ -97,6 +97,13 @@ kubectl get services -n default
 ### expected output
 ![service_output](images/service_output.png?raw=true "service_output")
 
+### Known Issue
+
+![known_issue](images/known_issue.png?raw=true "known_issue")
+
+DNS propagation takes time after the loadbalancer is created. If above screen appears wait for few minutes. 
+
+
 ## Step 6: Validation
 
 ### Backend application
