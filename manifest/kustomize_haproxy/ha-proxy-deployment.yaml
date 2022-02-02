@@ -1,0 +1,30 @@
+# DaemonSet.yaml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: base
+  labels:
+    app: base
+spec:
+  selector:
+    matchLabels:
+      app: base
+  template:
+    metadata:
+      labels:
+        app: base
+    spec:
+      containers:
+      - name: container
+        image: k8s.gcr.io/haproxy
+        ports:
+        - containerPort: 9000
+        - containerPort: 5000
+        - containerPort: 80
+        volumeMounts:
+        - name: configmap
+          mountPath: /usr/local/etc/haproxy
+      volumes:
+      - name: configmap
+        configMap:
+          name: haproxy-config

@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: base
+  name: stats-svc
+spec:
+  ports:
+  - name: stat-port
+    port: 9000
+    protocol: TCP
+    targetPort: 9000
+  - name: az-status-port
+    port: 5000
+    protocol: TCP
+    targetPort: 5000    
+  - name: application-port
+    port: 80
+    protocol: TCP
+    targetPort: 80 
+  selector:
+    app: base
+  type: LoadBalancer
+status:
+  loadBalancer: {}

@@ -1,0 +1,9 @@
+region            = "us-east-1"
+vpcName           = "alpha-vpc"
+tagOwner          = "alpha"
+clusterIdentifier = "alpha"
+nodeGroup         = "alpha-public-ng"
+maxSize           = 4
+minSize           = 3
+maxUnavailable    = 1
+desiredSize       = 3

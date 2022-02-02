@@ -1,0 +1,28 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: default
+
+images:
+  - name: k8s.gcr.io/haproxy
+    newName: dipinthomas2003/ha-proxy-ec2-metadata 
+    newTag: "region_az"
+
+commonLabels:
+  org: alpha
+  env: prd
+
+namePrefix: prd-
+
+configMapGenerator:
+- name: haproxy-config
+  files:
+  - haproxy.cfg
+
+resources:
+  - ha-proxy-deployment.yaml
+  - nginx-deployment.yaml
+  - haproxy-service.yaml
+  - nginx-service.yaml
+
+
