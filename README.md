@@ -109,6 +109,7 @@ DNS propagation takes time after the loadbalancer is created. If above screen ap
 ### Backend application
 
 A default nginx POD has been deployment on the cluster, HAProxy will forward the request to this backend.
+
 `URL : The loadbalancer URL obtained from previous step `
 
 ![backend_application](images/backend_application.png?raw=true "backend_application")
@@ -116,6 +117,7 @@ A default nginx POD has been deployment on the cluster, HAProxy will forward the
 ### AZ Details
 
 A python flask application is running on HAProxy POD which will help us understand the AZ in which the POD is running.
+
 `URL:  loadbalancer URL & port 5000`
 
 ![az_output](images/az_output.png?raw=true "az_output")
@@ -123,6 +125,7 @@ A python flask application is running on HAProxy POD which will help us understa
 ### HAProxy Stats
 
 HAProxy provides statics of traffic flow.
+
 `URL: loadbalancer URL & port 9000 `
 
 ![HAProxy_Stats](images/HAProxy_Stats.png?raw=true "HAProxy_Stats")
